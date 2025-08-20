@@ -1,6 +1,6 @@
 # DevChallenges.io - Simple Homepage
 
-![Thumbnail for the Simple Homepage coding challenge](.simple-homempage/simple-homepage-master/simple-homepage-master/thumbnail.jpg)
+![Thumbnail for the Simple Homepage coding challenge](./thumbnail.jpg)
 
 ## Welcome! 👋
 
