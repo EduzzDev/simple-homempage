@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;
+    0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+    <link rel="stylesheet" href="estilos/style.css" />
+
+    <title>Simple Homepage - Alarado | devChallenges.io</title>
+
+    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
+    <style>
+      body {
+        height: 100vh;
+      }
+
+      .author-info {
+        font-size: 14px;
+        text-align: center;
+        margin-top: -29%;
+        color: rgb(55, 65, 81);
+      }
+
+      .author-info a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="resources/logo-light.svg" class="logo" alt="Logo" />
+      <nav class="menu">
+        <li><a href="#about-us" onclick="select(this)">About us</a></li>
+        <li><a href="#Product" onclick="select(this)">Product</a></li>
+        <li><a href="#Resources" onclick="select(this)">Resources</a></li>
+        <li><a href="#Contact" onclick="select(this)">Contact</a></li>
+        <button onclick="toggleTheme()" class="theme-button">
+          <img src="resources/Moon_fill_light.svg" id="moon" alt="Moon Light" />
+          <img
+            src="resources/Sun_fill.svg"
+            width="24px"
+            id="sun"
+            alt="Sun Dark"
+          />
+        </button>
+      </nav>
+      <button onclick="menu()" class="menu-button">
+        <img
+          src="resources/hamburger-button.svg"
+          id="img-menu"
+          alt="botão menu"
+        />
+      </button>
+      <button type="button" onclick="closerMenu()" class="closer-menu">
+        <img
+          src="resources/close-button.svg"
+          id="img-close"
+          alt="botão fechar menu"
+        />
+      </button>
+      <main>
+        <span>&#128526; simple way to communicate</span>
+        <h1>
+          Actions for <br />
+          Accessibility <br />
+          in Design
+        </h1>
+        <img
+          class="hero_img"
+          src="resources/hero-image-simple-homepage.png"
+          alt="hero image"
+        />
+        <p>
+          The fastest way to build and deploy websites with reusable
+          <br />components.
+        </p>
+        <button
+          onclick="window.location.href='https://devchallenges.io/profile/e5c9ee29-2050-4c3e-bc71-981c14b0b442'"
+          class="btn-start"
+        >
+          GET STARTED
+        </button>
+        <a class="demo" href="https://github.com/EduzzDev">Get Live Demo</a>
+      </main>
+    </header>
+    <footer>
+      <ul class="features">
+        <li class="feature-item">
+          <img
+            class="done-img"
+            src="resources/Done_ring_round_fill.svg"
+            alt="Done ring"
+          />No credit card required
+        </li>
+        <li class="feature-item">
+          <img
+            class="done-img"
+            src="resources/Done_ring_round_fill.svg"
+            alt="Done ring"
+          />No software to install
+        </li>
+      </ul>
+      <div class="author-info">
+        Coded by <a href="#">eduzzfelipe21@gmail.com </a> | Challenge by
+        <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+          >devChallenges.io</a
+        >.
+      </div>
+    </footer>
+    <script>
+      select = (element) => {
+        const links = document.querySelectorAll(".menu li a");
+        links.forEach((link) => {
+          link.classList.remove("active");
+        });
+        element.classList.add("active");
+      };
+      const main = document.querySelector("main");
+      const footer = document.querySelector("footer");
+      const imgMenu = document.getElementById("img-menu");
+      const menuButton = document.querySelector(".menu-button");
+      const buttonToggle = document.querySelector(".theme-button");
+      const buttonLiveDemo = document.querySelector(".demo");
+      const heroImg = document.querySelector(".hero_img");
+      function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle("dark-theme");
+        body.classList.toggle("light-theme");
+        let theme = "light-theme";
+        if (body.classList.contains("dark-theme")) {
+          theme = "dark-theme";
+        }
+        localStorage.setItem("theme", theme);
+        applyThemeStyles(theme);
+      }
+      function menu() {
+        const menu = document.querySelector(".menu");
+        const closerMenu = document.querySelector(".closer-menu");
+        buttonToggle.style.display = "block";
+        closerMenu.style.display = "block";
+        menuButton.style.position = "fixed";
+        menuButton.style.display = "block";
+        menuButton.style.width = "80%";
+        menuButton.style.height = "100%";
+        menuButton.style.zIndex = "10";
+        menuButton.style.top = "0";
+        imgMenu.style.display = "none";
+        menu.style.display = "flex";
+        menu.style.flexDirection = "column";
+        menu.style.alignItems = "center";
+        menu.style.justifyContent = "center";
+
+        if (document.body.classList.contains("dark-theme")) {
+          menuButton.style.backgroundColor = "#111729";
+        } else {
+          menuButton.style.backgroundColor = "#f2f9fe";
+        }
+
+        main.style.bottom = "350px";
+        footer.style.bottom = "340px";
+        footer.style.position = "relative";
+      }
+      function closerMenu() {
+        const imgMenu = document.getElementById("img-menu");
+        const menu = document.querySelector(".menu");
+        const closerMenu = document.querySelector(".closer-menu");
+        imgMenu.style.display = "block";
+        menuButton.style.backgroundColor = "transparent";
+        menuButton.style.position = "relative";
+        buttonToggle.style.display = "none";
+        closerMenu.style.display = "none";
+        menu.style.display = "none";
+        menuButton.style.width = "0%";
+        main.style.bottom = "0";
+        main.style.zIndex = "1";
+        footer.style.bottom = "0";
+      }
+
+      function applyThemeStyles(theme) {
+        let chooseColor = document.querySelectorAll(
+          "a, span, h1, p, .demo, .feature-item"
+        );
+        let logoDark = document.querySelector(".logo");
+        let moon = document.getElementById("moon");
+        let sun = document.getElementById("sun");
+        let authorInfo = document.querySelector(".author-info");
+        let imgCloser = document.getElementById("img-close");
+
+        if (theme === "dark-theme") {
+          chooseColor.forEach((el) => (el.style.color = "#f2f9fe"));
+          moon.src = "resources/Moon_fill.svg";
+          sun.src = "resources/Sun_fill_light.png";
+          moon.style.backgroundColor = "#f2f9fe";
+          moon.style.borderRadius = "50%";
+          sun.style.backgroundColor = "transparent";
+          logoDark.src = "resources/logo-dark.svg";
+          authorInfo.style.color = "#f2f9fe";
+          menuButton.style.backgroundColor = "#111729";
+          imgCloser.src = "resources/close-button-white.svg";
+          imgMenu.src = "resources/hamburger-button-white.svg";
+        } else {
+          chooseColor.forEach((el) => (el.style.color = "#111729"));
+          moon.src = "resources/Moon_fill_light.svg";
+          moon.style.backgroundColor = "transparent";
+          sun.src = "resources/Sun_fill.svg";
+          sun.style.backgroundColor = "#f2f9fe";
+          authorInfo.style.color = "#374151";
+          logoDark.src = "resources/logo-light.svg";
+          menuButton.style.backgroundColor = "#f2f9fe";
+          imgCloser.src = "resources/close-button.svg";
+          imgMenu.src = "resources/hamburger-button.svg";
+        }
+      }
+
+      function loadTheme() {
+        const theme = localStorage.getItem("theme");
+
+        if (theme === "dark-theme") {
+          document.body.classList.add("dark-theme");
+        } else {
+          document.body.classList.add("light-theme");
+        }
+
+        applyThemeStyles(theme);
+      }
+
+      window.addEventListener("DOMContentLoaded", loadTheme);
+    </script>
+  </body>
+</html>
