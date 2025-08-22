@@ -1365,7 +1365,7 @@ body.dark-theme {
     font-size: 1.6dvw;
   }
 }
-@media screen and (min-width: 1200px) and (max-width: 1300px) and (min-height:700px ) {
+@media screen and (min-width: 1200px) and (max-width: 1320px) and (min-height:700px ) {
   p{
    bottom: 33vw;
    font-size: 1.5vw;
