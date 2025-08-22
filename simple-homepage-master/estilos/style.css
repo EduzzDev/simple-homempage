@@ -92,7 +92,7 @@ span {
   top: 5dvw;
 }
 h1 {
-  font-size: 60px;
+  font-size: 5dvw;
   font-weight: 800;
   color: #111729;
   position: relative;
@@ -108,7 +108,7 @@ h1 {
   bottom: 18dvw;
 }
 p {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #223344;
   position: relative;
@@ -1307,5 +1307,57 @@ body.dark-theme {
   }
   br {
     display: none;
+  }
+}
+@media screen and (min-width:1280px) and (min-height:900px) and (max-width:1440px){
+  
+  h1{
+    font-size: 10dvh;
+    top: 10.5dvb;
+  }
+  p{
+    font-size: 2.8dvb;
+    width: 60%;
+    bottom:25.5dvw;
+  }
+  .btn-start,
+  .demo {
+    bottom: 24dvw;
+  }
+  .feature-item {
+    top: 9dvw;
+    font-size: 1.3dvw;
+    margin-right: 4dvw;
+  }
+  .author-info {
+    position: relative;
+    top: 5vw;
+    font-size: 1.3dvw;
+  }
+}
+@media screen and (min-width:1280px) and (min-height:800px) and (max-width:1440px){
+  
+  h1{
+    font-size: 10.2dvh;
+    top: 13.5dvb;
+  }
+  p{
+    font-size: 3dvb;
+    width: 60%;
+    bottom:27.5dvw;
+  }
+  .btn-start,
+  .demo {
+    bottom: 25.2dvw;
+  }
+  .feature-item {
+    top: 8dvw;
+    font-size: 1.3dvw;
+    margin-right: 4dvw;
+  }
+  .author-info {
+    position: relative;
+    top: 3vw;
+    font-size: 1.6dvw;
   }
 }
