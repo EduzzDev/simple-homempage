@@ -1150,7 +1150,7 @@ body.dark-theme {
     display: none;
   }
 }
-@media screen and (min-width:900px) and (min-height:1300px) {
+@media screen and (min-width:900px) and (min-height:1400px) {
     .logo {
     width: 35dvw;
     position: relative;
@@ -1365,14 +1365,14 @@ body.dark-theme {
     font-size: 1.6dvw;
   }
 }
-@media screen and (min-width: 1200px) and (max-width: 1450px) and (min-height:700px ) {
+@media screen and (min-width: 1200px) and (max-width: 1450px) and (min-height:700px ) and (max-height: 799px) {
   p{
-   bottom: 27vw;
+   bottom: 33vw;
    font-size: 1.5vw;
   }
   .btn-start,
   .demo {
-    bottom: 25.2dvw;
+    bottom: 31.2dvw;
   }
   .feature-item { 
       font-size: 1.4dvw;
