@@ -990,7 +990,7 @@ body.dark-theme {
   }
 }
 
-@media screen and (max-width: 800px) and (min-width: 720px) {
+@media screen and (max-width: 900px) and (min-width: 720px) {
   .logo {
     width: 35dvw;
     position: relative;
@@ -1365,7 +1365,7 @@ body.dark-theme {
     font-size: 1.6dvw;
   }
 }
-@media screen and (min-width: 1200px) and (max-width: 1320px) and (min-height:700px ) {
+@media screen and (min-width: 1200px) and (max-width: 1450px) and (min-height:700px ) {
   p{
    bottom: 33vw;
    font-size: 1.5vw;
